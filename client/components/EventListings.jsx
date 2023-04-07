@@ -11,7 +11,6 @@ const EventListings = () => {
   const context = useContext(UserContext);
   const [events, setEvents] = useState([]);
   const [eventCount, setEventCount] = useState(0);
-  // const [user, setUser] = useState(context);
   // event handler that will send an axios request to the server/index.js file that
   // will filter out the rendered events based off of the sports categor selected
   const handleSelectSport = (e) => {
@@ -52,22 +51,19 @@ const EventListings = () => {
         console.error(err);
       });
   };
-  // console.log(user);
-  // const [users, setUsers] = useState([]);
 
   useEffect(() => {
     getAllEvents();
   }, [context]);
 
   useEffect(() => {
-    // setUser(context);
     getUser();
     // if (context) {
     //   setEventCount(context.eventCount);
     // }
   }, [context]);
 
-  console.log(context);
+  // console.log(context);
   if (context) {
     return (
       <div>
