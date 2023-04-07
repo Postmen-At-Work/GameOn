@@ -33,7 +33,9 @@ io.on('connection', (socket) => {
 });
 
 const DB = require('../DB/index');
-const { Events, Sports, Users } = require('../DB/models');
+const {
+  Events, Sports, Users, TeamList,
+} = require('../DB/models');
 
 const port = 3000;
 const distPath = path.resolve(__dirname, '..', 'dist');
@@ -81,6 +83,19 @@ app.get('/api/categories', (req, res) => {
 
 app.put('/user', (req, res) => {
   Users.findByIdAndUpdate(req.body.id, {
+    eventCount: req.body.eventCount,
+  })
+    .then((user) => {
+      res.status(200).send(user);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+});
+
+app.put('/user', (req, res) => {
+  Users.findById(req.body.id, {
     eventCount: req.body.eventCount,
   })
     .then((user) => {
@@ -291,6 +306,46 @@ app.post('/event/:eventId/message', (req, res) => {
       }
     },
   );
+});
+
+app.get('/users/:id', (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  Users.findById(id)
+    .then((user) => {
+      console.log('found', user);
+      res.status(200).send(user);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+});
+
+// Team Routes
+
+// Retrieve teams from database - TeamList.jsx
+app.get('/api/teamList', (req, res) => {
+  TeamList.findOne({ _id: req.query.id })
+    .then((teams) => res.status(200).send(teams))
+    .catch((error) => res.sendStatus(500));
+});
+
+// Add a team - CreateTeam.jsx
+app.post('/api/teamList', (req, res) => {
+  const {
+    owner,
+    teamName,
+    playerList,
+  } = req.body;
+
+  TeamList.create({
+    owner,
+    teamName,
+    playerList,
+  })
+    .then((team) => res.status(200).send(team))
+    .catch((error) => res.sendStatus(500));
 });
 
 app.listen(port, () => {
