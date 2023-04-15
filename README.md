@@ -4,7 +4,9 @@
 
 ---
 
-  GameON is a sports meetup application that allows you to view sporting events happening in your area. You can create events by picking from our selection of sports, setting a data, time, and location. After an event is created, you can navigate over to the sports tab to view all of the events, and either RSVP to specific events that you might be interested in or simply view the ones you created. Once you have events that you are commited to, you can then view them on the map to see the different events' locations. You also have a profile, via Google account, that will list all of your hosted events, as well as events that you're attending. Whether you wanna BLAST a baseball into space, or SLAM DUNK on the haters in your area, this app will make it easier than ever to organize.
+  GameON is a sports meetup application that allows you to view sporting events happening in your area. You can create events by picking from our selection of sports, setting a data, time, and location. After an event is created, you can navigate over to the sports tab to view all of the events, and either RSVP to specific events that you might be interested in or simply view the ones you created. Once you have events that you are commited to, you can then view them on the map to see the different events' locations. You also have a profile, via Google account, that will list all of your hosted events, as well as events that you're attending. Whether you wanna BLAST a baseball into space, or SLAM DUNK on the haters in your area, this app will make it easier than ever to organize. 
+  *UPDATE*
+ You can now check the weather, chat in a bulletin board, create teams, check the leaderboard for most active users, and interact with the equipment checklist on each event.
 
 ---
 
@@ -12,9 +14,15 @@
 
  - HOME
  - GAMES
+ - BULLETIN BOARD
+ - EQUIPMENT LIST
  - MAP
  - POST
  - PROFILE
+ - TEAMS
+ - TEAM CREATION
+ - WEATHER REPORT
+ - LEADERBOARD
 
 ---
 
@@ -133,6 +141,14 @@ The following are the various bugs we were unable to resolve during the course o
   - User will get an error in the dev console if they try to backspace all of the input from the player limit. this was initially done to prevent them from entering a number less than 1.
 
   - Sometimes addresses entered from google chromes saved addresses will populate the full address inside of the first address field
+
+  <h4 align='left'>LEADERBOARD</h4>
+
+  - when toggling rvsp on events/games page the user's eventcount updates. Upon leaving the page the eventcount resets. It works on refresh only before toggling anymore rvsp switches
+
+  <h4 align='left'>WEATHERD</h4>
+
+  - the weather icon on each event card does not account for the time of day, only the day of the event.
 
 ---
   <h2 align='left'>Available Resources</h2>
