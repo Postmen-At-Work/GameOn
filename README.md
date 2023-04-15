@@ -146,7 +146,7 @@ The following are the various bugs we were unable to resolve during the course o
 
   - when toggling rvsp on events/games page the user's eventcount updates. Upon leaving the page the eventcount resets. It works on refresh only before toggling anymore rvsp switches
 
-  <h4 align='left'>WEATHER</h4>
+  <h4 align='left'>WEATHERD</h4>
 
   - the weather icon on each event card does not account for the time of day, only the day of the event.
 
@@ -178,3 +178,9 @@ The following are the various bugs we were unable to resolve during the course o
 ![map](mockups/map.png)
 ![create](mockups/create.png)
 ![profile](mockups/profile.png)
+![leaderboard](mockups/leaderboard.png)
+![teams](mockups/teams.png)
+![create_team](mockups/create_team.png)
+![weather](mockups/weather.png)
+![bulletin_board](mockups/bulletin_board.png)
+![equipment_list](mockups/equipment_list.png)
